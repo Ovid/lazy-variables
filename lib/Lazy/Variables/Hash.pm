@@ -48,9 +48,8 @@ sub FIRSTKEY ($self) {
     each %{ $self->{hash} };
 }
 
+# lastkey is here for documentation, but we don't use it
 sub NEXTKEY ( $self, $lastkey ) {
-
-    # lastkey is here for documentation, but we don't use it
     return each %{ $self->{hash} };
 }
 
@@ -58,9 +57,10 @@ sub SCALAR ($self) {
     return scalar keys %{ $self->{hash} };
 }
 
-sub _data_printer ($self, @) {
+sub _data_printer ( $self, @ ) {
     return $self->{hash};
 }
+
 # DESTROY this is not needed
 # UNTIE this is not needed
 
